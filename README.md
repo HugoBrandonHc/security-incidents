@@ -1,1 +1,2 @@
-"# Proyecto de Seguridad en AWS" 
+# Página de Seguridad
+Proyecto sencillo para reportar y gestionar incidentes de ciberseguridad usando AWS.
