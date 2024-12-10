@@ -108,8 +108,8 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
       const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
       const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
       
-      const s3 = new S3Client({ region: "us-east-2" });
-      const dynamoDB = new DynamoDBClient({ region: "us-east-2" });
+      const s3 = new S3Client({ region: "tu-region-aqui" });
+      const dynamoDB = new DynamoDBClient({ region: "tu-region-aqui" });
       
       exports.handler = async (event) => {
           // Manejar solicitud preflight (OPTIONS)
@@ -125,7 +125,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
               };
           }
       
-          const bucketName = "incidentes-seguridad-hugo";
+          const bucketName = "tu-nombre-de-bucket";
           const folder = "pdf/";
       
           let body;
@@ -155,7 +155,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
       
               // Guardar detalles en DynamoDB
               const params = {
-                  TableName: "IncidentesSeguridad",
+                  TableName: "nombre-de-tu-tabla",
                   Item: {
                       id_incidente: { S: id_incidente },
                       descripcion: { S: descripcion },
