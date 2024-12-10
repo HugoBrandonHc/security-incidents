@@ -26,6 +26,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 ---
 ## **Arquitectura**
 
+![Diagrama de Arquitectura](arquitectura.png)
 
 ---
 
