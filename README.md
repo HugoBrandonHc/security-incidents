@@ -190,7 +190,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
       };
 
      ```
-   2. **Listar incidentes (GET):**
+2. **Listar incidentes (GET):**
 
    - Código Lambda:
      ```javascript
