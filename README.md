@@ -1,5 +1,16 @@
 # **🛡️ Gestión de Incidentes de Seguridad - Proyecto en AWS**
 
+## **Índice**
+1. [Descripción](#-descripción)
+2. [Objetivo](#-objetivo)
+3. [Servicios de AWS Utilizados](#️-servicios-de-aws-utilizados)
+4. [Arquitectura](#-arquitectura)
+5. [Guía Paso a Paso](#-guía-paso-a-paso)
+6. [Lecciones Aprendidas](#-lecciones-aprendidas)
+7. [Próximos Pasos](#-próximos-pasos)
+8. [Contacto](#-contacto)
+
+
  ## 📖 **Descripción**
 Este proyecto es una plataforma web diseñada para gestionar incidentes de seguridad de manera eficiente. Forma parte de mi aprendizaje práctico de AWS mientras me preparo para obtener la certificación AWS Certified Cloud Practitioner. El objetivo es implementar una solución real que utilice múltiples servicios de AWS, aprendiendo su configuración, integración y gestión dentro de la capa gratuita.
 
