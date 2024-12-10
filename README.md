@@ -5,7 +5,7 @@ Este proyecto es una plataforma web diseñada para gestionar incidentes de segur
 
 ---
 
-## **Objetivo**
+## 🎯 **Objetivo**
 Desarrollar una plataforma centralizada para registrar, almacenar y consultar incidentes de seguridad, integrando servicios de AWS para garantizar escalabilidad, seguridad y eficiencia.
 - Registrar incidentes de seguridad con detalles como descripción, prioridad y estado.
 - Subir y almacenar archivos PDF relacionados con los incidentes.
@@ -14,7 +14,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-## **Servicios de AWS Utilizados**
+## ⚙️ **Servicios de AWS Utilizados**
 1. **Frontend:** AWS Amplify.
 2. **Backend:** API Gateway, AWS Lambda.
 3. **Base de Datos:** DynamoDB.
@@ -30,7 +30,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-## **Guía Paso a Paso**
+## 🛠️ **Guía Paso a Paso**
 
 ### **1. Configuración de AWS Amplify**
 1. **Crear la aplicación frontend:**
@@ -153,7 +153,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-### **4. Configurar S3**
+### 💾 **4. Configurar S3**
 1. Crea un bucket llamado `tu-bucket`.
 2. Configura una política pública:
    ```json
@@ -169,7 +169,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
        ]
    }
 
-### **5. Configurar CloudFront y WAF**
+### 🌐 **5. Configurar CloudFront y WAF**
 1. **CloudFront**
    - Conecta CloudFront al dominio de Amplify
    - Configura políticas de caché y HTTPS
