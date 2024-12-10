@@ -1,14 +1,12 @@
 # **Gestión de Incidentes de Seguridad - Proyecto en AWS**
 
 ## **Descripción**
-Esta aplicación web permite registrar, almacenar y consultar incidentes de seguridad. Es parte de mi aprendizaje práctico de AWS, enfocado en implementar múltiples servicios dentro de la capa gratuita y profundizar en su funcionamiento real.
-
-El objetivo es no solo practicar para la certificación **AWS Certified Cloud Practitioner**, sino también compartir conocimientos para que otros puedan replicar y aprender de esta experiencia.
+Este proyecto es una plataforma web diseñada para gestionar incidentes de seguridad de manera eficiente. Forma parte de mi aprendizaje práctico de AWS mientras me preparo para obtener la certificación AWS Certified Cloud Practitioner. El objetivo es implementar una solución real que utilice múltiples servicios de AWS, aprendiendo su configuración, integración y gestión dentro de la capa gratuita.
 
 ---
 
 ## **Objetivo**
-Desarrollar una solución eficiente y escalable que permita:
+Desarrollar una plataforma centralizada para registrar, almacenar y consultar incidentes de seguridad, integrando servicios de AWS para garantizar escalabilidad, seguridad y eficiencia.
 - Registrar incidentes de seguridad con detalles como descripción, prioridad y estado.
 - Subir y almacenar archivos PDF relacionados con los incidentes.
 - Consultar, buscar y filtrar los incidentes registrados.
@@ -33,8 +31,8 @@ Desarrollar una solución eficiente y escalable que permita:
 1. **Crear la aplicación frontend:**
    - Clonar el repositorio:
      ```bash
-     git clone https://github.com/tu-usuario/tu-repo.git
-     cd tu-repo
+     git clone https://github.com/HugoBrandonHc/security-incidents.git
+     cd security-incidents
      ```
    - Conecta el repositorio a AWS Amplify:
      1. Ve a AWS Amplify y selecciona "Conectar aplicación".
@@ -173,12 +171,12 @@ Desarrollar una solución eficiente y escalable que permita:
 2. **WAF**
    - Configura reglas básicas para bloquear solicitudes maliciosas
 
-### **Lecciones aprendidas**
+## **Lecciones aprendidas**
    - Configuración y uso de múltiples servicios de AWS.
    - Implementación de un backend sin servidor.
    - Gestión de costos y optimización de la capa gratuita.
 
-### **Próximos pasos** 
+## **Próximos pasos** 
    - Añadir gráficos con Amazon QuickSight.
    - Explorar autenticación con Cognito en futuros proyectos.
 
