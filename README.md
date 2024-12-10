@@ -15,7 +15,7 @@
    - [🌐 5. Configurar CloudFront y WAF](#-5-configurar-cloudfront-y-waf)
 6. [📊 Lecciones Aprendidas](#-lecciones-aprendidas)
 7. [🔜 Próximos Pasos](#-próximos-pasos)
-8. [🌟 Reflexiones y Conexión con la Comunidad](#-reflexiones-y-conexión-con-la-comunidad)
+8. [🌟 Reflexiones y Conexión con la Comunidad](#-reflexiones-sobre-lo-aprendido)
 9. [📬 Contacto](#-contacto)
 
 ---
@@ -207,9 +207,8 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-## 🌟 **Reflexiones y Conexión con la Comunidad**
+## 🌟 **Reflexiones sobre lo aprendido**
 
-### 🚀 **Detalles del Aprendizaje**
 Durante el desarrollo de este proyecto, aprendí a:
 - Integrar múltiples servicios de **AWS** de manera eficiente y dentro de la capa gratuita.
 - Configurar una arquitectura escalable y segura utilizando servicios como **CloudFront, S3, API Gateway, DynamoDB y Lambda**.
