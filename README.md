@@ -1,6 +1,6 @@
 # **🛡️ Gestión de Incidentes de Seguridad - Proyecto en AWS**
 ## 🎨 Vista Previa del Frontend
-![Vista del Frontend](fronted-preview.png)
+![Vista del Frontend](assets/fronted-preview.png)
 
 ---
 
@@ -48,7 +48,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 ---
 ## 🏗️ **Arquitectura**
 
-![Diagrama de Arquitectura](arquitectura.png)
+![Diagrama de Arquitectura](assets/arquitectura.png)
 
 ---
 
