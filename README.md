@@ -1,4 +1,6 @@
 # **🛡️ Gestión de Incidentes de Seguridad - Proyecto en AWS**
+## 🎨 Vista Previa del Frontend
+![Vista del Frontend](frontend-preview.png)
 
 ---
 
