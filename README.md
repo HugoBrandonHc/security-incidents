@@ -105,69 +105,90 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 1. **Registrar Incidente (POST):**
    - Código Lambda:
      ```javascript
-     const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
-     const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
+           const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+      const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
+      
+      const s3 = new S3Client({ region: "us-east-2" });
+      const dynamoDB = new DynamoDBClient({ region: "us-east-2" });
+      
+      exports.handler = async (event) => {
+          // Manejar solicitud preflight (OPTIONS)
+          if (event.requestContext?.http?.method === "OPTIONS") {
+              return {
+                  statusCode: 200,
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                      "Access-Control-Allow-Methods": "OPTIONS,POST",
+                      "Access-Control-Allow-Headers": "Content-Type"
+                  },
+                  body: null,
+              };
+          }
+      
+          const bucketName = "incidentes-seguridad-hugo";
+          const folder = "pdf/";
+      
+          let body;
+          try {
+              body = JSON.parse(event.body); // Intenta parsear el cuerpo
+          } catch (err) {
+              console.error("Error parsing body:", err);
+              return {
+                  statusCode: 400,
+                  body: JSON.stringify({ message: "El cuerpo de la solicitud no es válido" })
+              };
+          }
+      
+          const { id_incidente, descripcion, estado, fecha_creacion, prioridad, archivo } = body || {};
+          const fileName = `${folder}${id_incidente}.pdf`;
+          const fileContent = Buffer.from(archivo, "base64");
+      
+          try {
+              // Subir el archivo a S3
+              const uploadParams = {
+                  Bucket: bucketName,
+                  Key: fileName,
+                  Body: fileContent,
+                  ContentType: "application/pdf",
+              };
+              await s3.send(new PutObjectCommand(uploadParams));
+      
+              // Guardar detalles en DynamoDB
+              const params = {
+                  TableName: "IncidentesSeguridad",
+                  Item: {
+                      id_incidente: { S: id_incidente },
+                      descripcion: { S: descripcion },
+                      estado: { S: estado },
+                      fecha_creacion: { S: fecha_creacion },
+                      prioridad: { S: prioridad },
+                      archivo_s3: { S: `s3://${bucketName}/${fileName}` },
+                  },
+              };
+              await dynamoDB.send(new PutItemCommand(params));
+      
+              // Respuesta exitosa con CORS
+              return {
+                  statusCode: 200,
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                      "Access-Control-Allow-Methods": "OPTIONS,POST",
+                      "Access-Control-Allow-Headers": "Content-Type"
+                  },
+                  body: JSON.stringify({ message: "Incidente registrado correctamente" }),
+              };
+          } catch (error) {
+              console.error(error);
+              return {
+                  statusCode: 500,
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                  },
+                  body: JSON.stringify({ message: "Error al procesar el incidente", error }),
+              };
+          }
+      };
 
-     const s3 = new S3Client({ region: "us-east-2" });
-     const dynamoDB = new DynamoDBClient({ region: "us-east-2" });
-
-     exports.handler = async (event) => {
-         const bucketName = "tu-bucket";
-         const folder = "pdf/";
-         const body = JSON.parse(event.body);
-
-         const { id_incidente, descripcion, estado, prioridad, archivo } = body;
-         const fileName = `${folder}${id_incidente}.pdf`;
-         const fileContent = Buffer.from(archivo, "base64");
-
-         try {
-             await s3.send(new PutObjectCommand({
-                 Bucket: bucketName,
-                 Key: fileName,
-                 Body: fileContent,
-                 ContentType: "application/pdf",
-             }));
-
-             await dynamoDB.send(new PutItemCommand({
-                 TableName: "IncidentesSeguridad",
-                 Item: {
-                     id_incidente: { S: id_incidente },
-                     descripcion: { S: descripcion },
-                     estado: { S: estado },
-                     prioridad: { S: prioridad },
-                     archivo_s3: { S: `s3://${bucketName}/${fileName}` },
-                 },
-             }));
-
-             return { statusCode: 200, body: JSON.stringify({ message: "Incidente registrado correctamente" }) };
-         } catch (error) {
-             return { statusCode: 500, body: JSON.stringify({ message: "Error al registrar incidente", error }) };
-         }
-     };
-     ```
-
-2. **Listar Incidentes (GET):**
-   - Código Lambda:
-     ```javascript
-     const { DynamoDBClient, ScanCommand } = require("@aws-sdk/client-dynamodb");
-     const dynamoDB = new DynamoDBClient({ region: "us-east-2" });
-
-     exports.handler = async () => {
-         try {
-             const data = await dynamoDB.send(new ScanCommand({ TableName: "IncidentesSeguridad" }));
-             const items = data.Items.map(item => ({
-                 id_incidente: item.id_incidente.S,
-                 descripcion: item.descripcion.S,
-                 estado: item.estado.S,
-                 prioridad: item.prioridad.S,
-                 archivo_s3: item.archivo_s3.S,
-             }));
-
-             return { statusCode: 200, body: JSON.stringify(items) };
-         } catch (error) {
-             return { statusCode: 500, body: JSON.stringify({ message: "Error al listar incidentes", error }) };
-         }
-     };
      ```
 
 3. **Pruebas:**  
