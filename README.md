@@ -85,8 +85,8 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 2. **Configurar CORS:**
    - En ambas rutas, habilita CORS para permitir solicitudes desde tu dominio de Amplify y CloudFront.
 
-3. **Probar con Postman:**
-   - Configura los métodos POST y GET en Postman:
+3. **Probar con Imsomnia:**
+   - Configura los métodos POST y GET en Imsomnia:
      - **POST:** Envía un JSON como este:
        ```json
        {
@@ -171,7 +171,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
      ```
 
 3. **Pruebas:**  
-   - Ejecuta pruebas desde API Gateway y Postman.
+   - Ejecuta pruebas desde API Gateway y Imsomnia.
 
 ---
 
