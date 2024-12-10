@@ -1,15 +1,24 @@
 # **🛡️ Gestión de Incidentes de Seguridad - Proyecto en AWS**
 
-## **Índice**
-1. [Descripción](#-descripción)
-2. [Objetivo](#-objetivo)
-3. [Servicios de AWS Utilizados](#️-servicios-de-aws-utilizados)
-4. [Arquitectura](#-arquitectura)
-5. [Guía Paso a Paso](#-guía-paso-a-paso)
-6. [Lecciones Aprendidas](#-lecciones-aprendidas)
-7. [Próximos Pasos](#-próximos-pasos)
-8. [Contacto](#-contacto)
+---
 
+## **📋 Índice**
+1. [📖 Descripción](#-descripción)
+2. [🎯 Objetivo](#-objetivo)
+3. [⚙️ Servicios de AWS Utilizados](#️-servicios-de-aws-utilizados)
+4. [🏗️ Arquitectura](#-arquitectura)
+5. [🛠️ Guía Paso a Paso](#️-guía-paso-a-paso)
+   - [🚀 1. Configuración de AWS Amplify](#-1-configuración-de-aws-amplify)
+   - [🌉 2. Crear y Configurar API Gateway](#-2-crear-y-configurar-api-gateway)
+   - [📝 3. Configurar AWS Lambda](#-3-configurar-aws-lambda)
+   - [💾 4. Configurar S3](#-4-configurar-s3)
+   - [🌐 5. Configurar CloudFront y WAF](#-5-configurar-cloudfront-y-waf)
+6. [📊 Lecciones Aprendidas](#-lecciones-aprendidas)
+7. [🔜 Próximos Pasos](#-próximos-pasos)
+8. [🌟 Reflexiones y Conexión con la Comunidad](#-reflexiones-y-conexión-con-la-comunidad)
+9. [📬 Contacto](#-contacto)
+
+---
 
  ## 📖 **Descripción**
 Este proyecto es una plataforma web diseñada para gestionar incidentes de seguridad de manera eficiente. Forma parte de mi aprendizaje práctico de AWS mientras me preparo para obtener la certificación AWS Certified Cloud Practitioner. El objetivo es implementar una solución real que utilice múltiples servicios de AWS, aprendiendo su configuración, integración y gestión dentro de la capa gratuita.
@@ -207,17 +216,17 @@ Durante el desarrollo de este proyecto, aprendí a:
 - Gestionar costos y recursos con herramientas como **CloudWatch** y **Cost Explorer**.
 - Implementar una comunicación eficiente entre el **frontend** y el **backend** para construir una solución funcional y práctica.
 
-Este proyecto me permitió consolidar mis conocimientos en AWS y adquirir experiencia práctica que va más allá de la teoría, preparándome para futuros retos como la certificación **AWS Certified Cloud Practitioner**.
+Este proyecto me permitió consolidar mis conocimientos en AWS y adquirir experiencia práctica que va más allá de la teoría, preparándome para futuros retos.
 
 ---
 
 ### 💬 **Inspira y Comparte**
 Este proyecto no solo representa un paso en mi aprendizaje, sino también una oportunidad para inspirar a otros a explorar el mundo de AWS. Si estás comenzando con los servicios de AWS, mi consejo es:
 - ¡No tengas miedo de experimentar! 🧪
-- Comienza con proyectos pequeños y construye sobre ellos. 🛠️
+- Comienza con proyectos pequeños, construye y documenta sobre ellos. 🛠️
 - Aprende de tus errores; cada error es una lección valiosa. 📚
 
-Si este proyecto te ayudó o te inspiró, me encantaría escuchar sobre ello. ¡Comparte tus experiencias conmigo y juntos hagamos crecer la comunidad! 🌎
+Si este proyecto te ayudó o tienes alguna pregunta, no dudes en contactarme, ¡Comparte tus experiencias y juntos hagamos crecer la comunidad! 🌎
 
 ---
 
@@ -225,9 +234,3 @@ Si este proyecto te ayudó o te inspiró, me encantaría escuchar sobre ello. ¡
 - 💼 **LinkedIn:** [Mi Perfil](https://www.linkedin.com/in/hugobrandonhuaytacortez)
 - 📧 **Correo:** [hugobrandon17@gmail.com](mailto:hugobrandon17@gmail.com)
 - 🐙 **GitHub:** [Mi Repositorio](https://github.com/HugoBrandonHc/security-incidents)
-
-
-## **📬 Contacto**
-- 💼 **Linkedin:** [LinkedIn](https://www.linkedin.com/in/hugobrandonhuaytacortez)
-- 📧 **Correo:** [hugobrandon17@gmail.com](mailto:hugobrandon17@gmail.com)
-- 🐙 **GitHub:** [Mi Repositorio](https://github.com/HugoBrandonHc/security-incidents.git)
