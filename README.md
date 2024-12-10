@@ -190,6 +190,51 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
       };
 
      ```
+     2. **Listar incidentes (GET):**
+
+   - Código Lambda:
+     ```javascript
+      const { DynamoDBClient, ScanCommand } = require("@aws-sdk/client-dynamodb");
+      
+      const dynamoDB = new DynamoDBClient({ region: "us-east-2" });
+      
+      exports.handler = async (event) => {
+          const params = {
+              TableName: "nombre-de-tabla-dynamodb", // Asegúrate de que este nombre es correcto
+          };
+      
+          try {
+              const data = await dynamoDB.send(new ScanCommand(params));
+      
+              const items = data.Items.map(item => ({
+                  id_incidente: item.id_incidente.S,
+                  descripcion: item.descripcion.S,
+                  estado: item.estado.S,
+                  fecha_creacion: item.fecha_creacion.S,
+                  prioridad: item.prioridad.S,
+                  archivo_s3: item.archivo_s3.S
+              }));
+      
+              return {
+                  statusCode: 200,
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                  },
+                  body: JSON.stringify(items),
+              };
+          } catch (error) {
+              console.error("Error al obtener los incidentes:", error);
+              return {
+                  statusCode: 500,
+                  headers: {
+                      "Access-Control-Allow-Origin": "*",
+                  },
+                  body: JSON.stringify({ message: "Error al obtener los incidentes", error }),
+              };
+          }
+      };
+
+     ```
 
 3. **Pruebas:**  
    - Ejecuta pruebas desde API Gateway y Imsomnia.
