@@ -105,7 +105,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 1. **Registrar Incidente (POST):**
    - Código Lambda:
      ```javascript
-           const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
+      const { S3Client, PutObjectCommand } = require("@aws-sdk/client-s3");
       const { DynamoDBClient, PutItemCommand } = require("@aws-sdk/client-dynamodb");
       
       const s3 = new S3Client({ region: "us-east-2" });
