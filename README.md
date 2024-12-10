@@ -32,7 +32,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ## 🛠️ **Guía Paso a Paso**
 
-### **1. Configuración de AWS Amplify**
+### **🚀 1. Configuración de AWS Amplify**
 1. **Crear la aplicación frontend:**
    - Clonar el repositorio:
      ```bash
@@ -53,7 +53,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-### **2. Crear y Configurar API Gateway**
+### **🌉 2. Crear y Configurar API Gateway**
 1. **Crear una API REST:**
    - Define las rutas:
      - `POST /incidentes`: Para registrar incidentes.
