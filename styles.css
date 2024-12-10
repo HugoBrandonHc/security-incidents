@@ -1,40 +1,63 @@
+/* General */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 20px;
-    background-color: #f4f4f9;
+    background: linear-gradient(135deg, #f4f4f9, #dbe4ff);
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 h1, h2 {
     color: #333;
     text-align: center;
-}
-
-form {
     margin-bottom: 20px;
-    background: #ffffff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
+form, table {
+    animation: fadeIn 0.8s ease-in-out;
 }
 
-input, select, textarea, button {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+/* Animación */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
+/* Botón */
+button {
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+button:active {
+    background-color: #003f7f;
+}
+
+/* Tablas */
 table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 table, th, td {
@@ -42,8 +65,9 @@ table, th, td {
 }
 
 th, td {
-    padding: 10px;
+    padding: 12px;
     text-align: left;
+    font-size: 14px;
 }
 
 th {
@@ -51,11 +75,38 @@ th {
     color: #ffffff;
 }
 
-a {
-    color: #007bff;
-    text-decoration: none;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
 }
 
-a:hover {
-    text-decoration: underline;
+tr:hover {
+    background-color: #e6f7ff;
+    cursor: pointer;
+}
+
+/* Modo Oscuro */
+body.dark-mode {
+    background-color: #2b2b2b;
+    color: #ffffff;
+}
+
+body.dark-mode table, body.dark-mode form {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
+body.dark-mode th {
+    background: #555;
+}
+
+button.dark-mode-toggle {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
 }

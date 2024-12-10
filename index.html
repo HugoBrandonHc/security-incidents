@@ -4,54 +4,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gestión de Incidentes</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Registrar Incidente</h1>
-    <form id="form-incidente">
-        <label for="id_incidente">ID Incidente:</label>
-        <input type="text" id="id_incidente" name="id_incidente" required><br><br>
+    <header class="navbar navbar-dark bg-primary fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gestión de Incidentes</a>
+        </div>
+    </header>
 
-        <label for="descripcion">Descripción:</label>
-        <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+    <div class="container mt-5 pt-3">
+        <h1 class="text-center text-primary">Gestión de Incidentes</h1>
+        <form id="form-incidente" class="mb-4">
+            <div class="mb-3">
+                <label for="id_incidente" class="form-label">ID Incidente:</label>
+                <input type="text" id="id_incidente" name="id_incidente" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="descripcion" class="form-label">Descripción:</label>
+                <textarea id="descripcion" name="descripcion" class="form-control" required></textarea>
+            </div>
+            <div class="mb-3">
+                <label for="estado" class="form-label">Estado:</label>
+                <select id="estado" name="estado" class="form-select" required>
+                    <option value="Abierto">Abierto</option>
+                    <option value="Cerrado">Cerrado</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="prioridad" class="form-label">Prioridad:</label>
+                <select id="prioridad" name="prioridad" class="form-select" required>
+                    <option value="Alta">Alta</option>
+                    <option value="Media">Media</option>
+                    <option value="Baja">Baja</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="archivo" class="form-label">Archivo PDF:</label>
+                <input type="file" id="archivo" name="archivo" class="form-control" accept="application/pdf" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">🚀 Registrar</button>
+        </form>
 
-        <label for="estado">Estado:</label>
-        <select id="estado" name="estado" required>
-            <option value="Abierto">Abierto</option>
-            <option value="Cerrado">Cerrado</option>
-        </select><br><br>
+        <div class="mb-3">
+            <label for="buscar" class="form-label">Buscar Incidentes:</label>
+            <input type="text" id="buscar" class="form-control" placeholder="Buscar por ID, descripción, etc.">
+        </div>
 
-        <label for="prioridad">Prioridad:</label>
-        <select id="prioridad" name="prioridad" required>
-            <option value="Alta">Alta</option>
-            <option value="Media">Media</option>
-            <option value="Baja">Baja</option>
-        </select><br><br>
+        <h2 class="text-center text-secondary">Incidentes Registrados</h2>
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Descripción</th>
+                    <th>Estado</th>
+                    <th>Prioridad</th>
+                    <th>Archivo</th>
+                </tr>
+            </thead>
+            <tbody id="tabla-archivos">
+                <!-- Las filas se llenarán dinámicamente -->
+            </tbody>
+        </table>
+    </div>
 
-        <label for="archivo">Archivo PDF:</label>
-        <input type="file" id="archivo" name="archivo" accept="application/pdf" required><br><br>
+    <button class="dark-mode-toggle" onclick="toggleDarkMode()">🌓</button>
 
-        <button type="submit">Registrar</button>
-    </form>
-
-    <p id="resultado"></p>
-
-    <h2>Archivos Subidos</h2>
-    <table id="tabla-archivos">
-        <thead>
-            <tr>
-                <th>ID Incidente</th>
-                <th>Descripción</th>
-                <th>Estado</th>
-                <th>Prioridad</th>
-                <th>Archivo</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Las filas se llenarán dinámicamente -->
-        </tbody>
-    </table>
-
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         document.getElementById("form-incidente").addEventListener("submit", async function(event) {
             event.preventDefault();
@@ -63,12 +85,12 @@
             const archivoInput = document.getElementById("archivo").files[0];
 
             if (!archivoInput) {
-                document.getElementById("resultado").innerText = "Por favor, selecciona un archivo.";
+                alert("Por favor, selecciona un archivo.");
                 return;
             }
 
             if (archivoInput.size > 5 * 1024 * 1024) {
-                document.getElementById("resultado").innerText = "El archivo debe ser menor a 5 MB.";
+                alert("El archivo debe ser menor a 5 MB.");
                 return;
             }
 
@@ -95,13 +117,10 @@
                     });
 
                     const result = await response.json();
-                    document.getElementById("resultado").style.color = "green";
-                    document.getElementById("resultado").innerText = result.message;
-                    cargarArchivos(); // Actualiza la tabla tras registrar un incidente
+                    alert(result.message);
+                    cargarArchivos();
                 } catch (error) {
-                    console.error(error);
-                    document.getElementById("resultado").style.color = "red";
-                    document.getElementById("resultado").innerText = "Error al registrar el incidente.";
+                    console.error("Error al registrar el incidente:", error);
                 }
             };
 
@@ -110,27 +129,39 @@
 
         async function cargarArchivos() {
             try {
-                const response = await fetch("https://bf9tv4oh0m.execute-api.us-east-2.amazonaws.com/produccion/listar"); // Nuevo endpoint para listar incidentes
+                const response = await fetch("https://bf9tv4oh0m.execute-api.us-east-2.amazonaws.com/produccion/listar");
                 const datos = await response.json();
 
-                const tabla = document.getElementById("tabla-archivos").querySelector("tbody");
-                tabla.innerHTML = ""; // Limpiar tabla antes de llenarla
+                const tabla = document.getElementById("tabla-archivos");
+                tabla.innerHTML = "";
 
                 datos.forEach(item => {
                     const fila = document.createElement("tr");
-
                     fila.innerHTML = `
                         <td>${item.id_incidente}</td>
                         <td>${item.descripcion}</td>
                         <td>${item.estado}</td>
                         <td>${item.prioridad}</td>
-                        <td><a href="https://incidentes-seguridad-hugo.s3.us-east-2.amazonaws.com/pdf/${item.id_incidente}.pdf" target="_blank">Ver Archivo</a></td>
+                        <td><a href="${item.archivo_s3}" target="_blank">📄 Ver Archivo</a></td>
                     `;
                     tabla.appendChild(fila);
                 });
             } catch (error) {
-                console.error("Error al cargar los archivos:", error);
+                console.error("Error al cargar los incidentes:", error);
             }
+        }
+
+        document.getElementById("buscar").addEventListener("input", function() {
+            const filtro = this.value.toLowerCase();
+            const filas = document.querySelectorAll("#tabla-archivos tr");
+            filas.forEach(fila => {
+                const texto = fila.textContent.toLowerCase();
+                fila.style.display = texto.includes(filtro) ? "" : "none";
+            });
+        });
+
+        function toggleDarkMode() {
+            document.body.classList.toggle("dark-mode");
         }
 
         document.addEventListener("DOMContentLoaded", cargarArchivos);
