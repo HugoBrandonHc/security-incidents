@@ -237,5 +237,5 @@ Si este proyecto te ayudó o tienes alguna pregunta, no dudes en contactarme, ¡
 - 🐙 **GitHub:** [Mi Repositorio](https://github.com/HugoBrandonHc/security-incidents)
 
 ## 📜 Licencia
-Este proyecto está licenciado bajo los términos de la [Licencia MIT](LICENSE.md). Es un proyecto de aprendizaje y no tiene fines de lucro.
+Este proyecto está licenciado bajo los términos de la [Licencia](LICENSE.md). Es un proyecto de aprendizaje y no tiene fines de lucro.
 
