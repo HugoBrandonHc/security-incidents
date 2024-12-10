@@ -185,8 +185,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
    - Añadir gráficos con Amazon QuickSight.
    - Explorar autenticación con Cognito en futuros proyectos.
 
-## **Contacto**
-- **Linkedin:** [LinkedIn](https://www.linkedin.com/in/hugobrandonhuaytacortez)
-
-- **Correo:** [hugobrandon17@gmail.com](mailto:hugobrandon17@gmail.com)
-
+## **📬 Contacto**
+- 💼 ** Linkedin:** [LinkedIn](https://www.linkedin.com/in/hugobrandonhuaytacortez)
+- 📧 ** Correo:** [hugobrandon17@gmail.com](mailto:hugobrandon17@gmail.com)
+- 🐙 **GitHub:** [Mi Repositorio]([https://github.com/tu-usuario/](https://github.com/HugoBrandonHc/security-incidents.git)
