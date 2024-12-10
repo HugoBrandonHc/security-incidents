@@ -24,7 +24,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 7. **Monitoreo:** CloudWatch y Cost Explorer.
 
 ---
-## **Arquitectura**
+## **🏗️ Arquitectura**
 
 ![Diagrama de Arquitectura](arquitectura.png)
 
@@ -79,7 +79,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 
 ---
 
-### **3. Configurar AWS Lambda**
+### 📝 **3. Configurar AWS Lambda**
 1. **Registrar Incidente (POST):**
    - Código Lambda:
      ```javascript
@@ -176,12 +176,12 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 2. **WAF**
    - Configura reglas básicas para bloquear solicitudes maliciosas
 
-## **Lecciones aprendidas**
+## 📊 **Lecciones aprendidas**
    - Configuración y uso de múltiples servicios de AWS.
    - Implementación de un backend sin servidor.
    - Gestión de costos y optimización de la capa gratuita.
 
-## **Próximos pasos** 
+## 🔜 **Próximos pasos** 
    - Añadir gráficos con Amazon QuickSight.
    - Explorar autenticación con Cognito en futuros proyectos.
 
