@@ -142,7 +142,7 @@
                         <td>${item.descripcion}</td>
                         <td>${item.estado}</td>
                         <td>${item.prioridad}</td>
-                        <td><a href="${item.archivo_s3}" target="_blank">📄 Ver Archivo</a></td>
+                        <td><a href="https://incidentes-seguridad-hugo.s3.us-east-2.amazonaws.com/pdf/${item.id_incidente}.pdf" target="_blank">📄 Ver Archivo</a></td>
                     `;
                     tabla.appendChild(fila);
                 });
