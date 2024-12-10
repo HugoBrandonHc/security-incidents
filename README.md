@@ -24,6 +24,10 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 7. **Monitoreo:** CloudWatch y Cost Explorer.
 
 ---
+## **Arquitectura**
+
+
+---
 
 ## **Guía Paso a Paso**
 
