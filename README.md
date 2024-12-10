@@ -186,5 +186,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
    - Explorar autenticación con Cognito en futuros proyectos.
 
 ## **Contacto**
-Linkedin: [https://www.linkedin.com/in/hugobrandonhuaytacortez/]
-Correo: [hugobrandon17@gmail.com]
+- **Linkedin:** [Mi LinkedIn]([https://www.linkedin.com/in/tu-perfil/](https://www.linkedin.com/in/hugobrandonhuaytacortez/))
+
+- **Correo:** [Mi Correo](hugobrandon17@gmail.com)
+
