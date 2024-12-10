@@ -35,7 +35,7 @@ Desarrollar una plataforma centralizada para registrar, almacenar y consultar in
 7. **Monitoreo:** CloudWatch y Cost Explorer.
 
 ---
-## **🏗️ Arquitectura**
+## 🏗️ **Arquitectura**
 
 ![Diagrama de Arquitectura](arquitectura.png)
 
