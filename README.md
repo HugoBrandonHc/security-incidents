@@ -166,8 +166,22 @@ Desarrollar una solución eficiente y escalable que permita:
        ]
    }
 
-Añadir gráficos con Amazon QuickSight.
-Explorar autenticación con Cognito en futuros proyectos.
-Contacto
-GitHub: [Tu Perfil]
-Correo: [Tu Correo]
+### **5. Configurar CloudFront y WAF**
+1. **CloudFront**
+   - Conecta CloudFront al dominio de Amplify
+   - Configura políticas de caché y HTTPS
+2. **WAF**
+   - Configura reglas básicas para bloquear solicitudes maliciosas
+
+### **Lecciones aprendidas**
+   - Configuración y uso de múltiples servicios de AWS.
+   - Implementación de un backend sin servidor.
+   - Gestión de costos y optimización de la capa gratuita.
+
+### **Próximos pasos** 
+   - Añadir gráficos con Amazon QuickSight.
+   - Explorar autenticación con Cognito en futuros proyectos.
+
+## **Contacto**
+Linkedin: [https://www.linkedin.com/in/hugobrandonhuaytacortez/]
+Correo: [hugobrandon17@gmail.com]
